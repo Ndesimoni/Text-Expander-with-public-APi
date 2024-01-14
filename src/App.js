@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./index.css";
 
 export default function App() {
@@ -34,16 +35,33 @@ export default function App() {
   );
 }
 
+//this is the text expander component
 function TextExpander({
+  collapsedNumWords = 10,
+  collapseButtonText = "show less",
   children,
   buttonColor = "blue",
   expandButtonText = "show more",
+  expanded = false,
+  className,
 }) {
+  const [showTex, setShowTex] = useState(expanded);
+
+  const isExpanded = showTex
+    ? children
+    : children.split(" ").slice(0, collapsedNumWords).join(" ") + "...";
+
   return (
     <>
-      <div className="box">
-        {children}{" "}
-        <span style={{ color: buttonColor }}>{expandButtonText}</span>
+      <div className={className}>
+        <span> {isExpanded}</span>
+        <button
+          style={{ color: buttonColor }}
+          className="box"
+          onClick={() => setShowTex((e) => !e)}
+        >
+          {isExpanded ? collapseButtonText : expandButtonText}
+        </button>
       </div>
     </>
   );
