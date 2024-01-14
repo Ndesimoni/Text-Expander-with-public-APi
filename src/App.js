@@ -60,7 +60,7 @@ function TextExpander({
           className="box"
           onClick={() => setShowTex((e) => !e)}
         >
-          {isExpanded ? collapseButtonText : expandButtonText}
+          {showTex ? collapseButtonText : expandButtonText}
         </button>
       </div>
     </>
