@@ -38,6 +38,9 @@ function TextExpander({
   children,
   buttonColor = "blue",
   expandButtonText = "show more",
+  expanded,
+  className,
+  collapseButtonText = "show less",
 }) {
   return (
     <>
