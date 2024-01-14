@@ -34,10 +34,17 @@ export default function App() {
   );
 }
 
-function TextExpander({ children }) {
+function TextExpander({
+  children,
+  buttonColor = "blue",
+  expandButtonText = "show more",
+}) {
   return (
     <>
-      <div className="box">{children} </div>
+      <div className="box">
+        {children}{" "}
+        <span style={{ color: buttonColor }}>{expandButtonText}</span>
+      </div>
     </>
   );
 }
