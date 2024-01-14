@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+## this is a highly reuseable text collape component with public APIs with with devolopers can constumize to fit their likings
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
