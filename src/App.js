@@ -35,31 +35,17 @@ export default function App() {
   );
 }
 
+//this is the text expander component
 function TextExpander({
-  collapsedNumWords = 10,
   children,
   buttonColor = "blue",
   expandButtonText = "show more",
-  expanded = false,
-  className,
-  collapseButtonText = "show less",
 }) {
-  const [textStatus, setTextStatus] = useState(expanded);
-  const isOpenCondition = textStatus
-    ? children
-    : children.split(" ").slice(0, collapsedNumWords).join(" ");
-
-  function textstate(e) {
-    setTextStatus((e) => !e);
-  }
-
   return (
     <>
-      <div className={className}>
-        <span>{isOpenCondition}</span>
-        <button onClick={textstate} style={{ color: buttonColor }}>
-          {isOpenCondition ? collapseButtonText : expandButtonText}
-        </button>
+      <div className="box">
+        {children}{" "}
+        <span style={{ color: buttonColor }}>{expandButtonText}</span>
       </div>
     </>
   );
